@@ -1,0 +1,11 @@
+{
+    "/weatherapi": {
+      "target": "http://api.weatherapi.com",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/weatherapi": ""
+      }
+    }
+  }
+  

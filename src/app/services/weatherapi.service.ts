@@ -5,12 +5,15 @@ import { report } from './models/report';
 @Injectable({
   providedIn: 'root'
 })
-export class WeatherapiService{
+export class WeatherapiService {
 
-  constructor(private http:HttpClient) { }
-  getweatherreport(city:string){
-    const baseurl=`http://api.weatherapi.com/v1/current.json?key=ab5e441838fc45949bc90450240706&q=${city}`;
-   return this.http.get<report>(baseurl);
-    
+  constructor(private http: HttpClient) { }
+  getweatherreport(city: string) {
+    const baseurl = `http://api.weatherapi.com/v1/current.json?key=ab5e441838fc45949bc90450240706&q=${city}`;
+    return this.http.get<report>(baseurl);
+  }
+  getincompletecityname(city: string) {
+    const baseurl = `http://api.weatherapi.com/v1/search.json?key=ab5e441838fc45949bc90450240706&q=${city}`;
+    return this.http.get<any>(baseurl);
   }
 }

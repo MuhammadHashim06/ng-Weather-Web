@@ -1,0 +1,17 @@
+<h1>Hourly Weather Forecast</h1>
+<table class="weather-table">
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Icon</th>
+      <th>Temperature (°C)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hours of hourlyreport">
+      <td>{{ hours.time }}</td>
+      <td> {{hours.condition.text}}  <img [src]="hours.condition.icon" alt="weather"></td>
+      <td>{{ hours.temp_c }}</td>
+    </tr>
+  </tbody>
+</table>

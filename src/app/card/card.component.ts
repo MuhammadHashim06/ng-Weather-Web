@@ -11,6 +11,6 @@ import { report } from '../services/models/report';
 export class CardComponent {
 
   @Input()
-  value?:report
+  value?:any
 
 }

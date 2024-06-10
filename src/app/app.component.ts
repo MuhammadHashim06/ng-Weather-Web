@@ -3,21 +3,21 @@ import { RouterOutlet } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 import { CardComponent } from './card/card.component';
 import { report } from './services/models/report';
+import { WeatherforcastComponent } from './weatherforcast/weatherforcast.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MenuComponent,CardComponent],
+  imports: [RouterOutlet,MenuComponent,CardComponent,WeatherforcastComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'weatherapp';
   
-  passvalue?:report
+  passvalue:any
 
-  handleDataChange(data: report) {
+  handleDataChange(data: any) {
     this.passvalue=data;
-    console.log(data);
   }
 }

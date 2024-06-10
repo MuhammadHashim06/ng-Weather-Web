@@ -12,13 +12,13 @@ import { CommonModule } from '@angular/common';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
 
 
   @Output()
   dataChange: EventEmitter<any> = new EventEmitter<any>();
 
-  city: string = '';
+  city: string = 'Lahore';
   subscription: any;
   names: Array<any> = [];
 
@@ -45,8 +45,11 @@ export class MenuComponent {
   // };
 
   constructor(private service: WeatherapiService) { }
+  ngOnInit(): void {
+    this.getvalue()
+  }
   getvalue() {
-    this.subscription = this.service.getweatherreport(this.city).subscribe({
+    this.subscription = this.service.getweatherreport(this.city,7).subscribe({
       next: (result) => {
         this.emitdata(result)
       }
@@ -55,7 +58,6 @@ export class MenuComponent {
 
   emitdata(result: any) {
     this.dataChange.emit(result);
-    console.log(result.forecast.forecastday["0"].hour);
     this.subscription.unsubscribe()
   }
   async getnames() {

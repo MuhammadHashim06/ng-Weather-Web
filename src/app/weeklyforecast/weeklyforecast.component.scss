@@ -1,0 +1,39 @@
+
+.weekly-forecast-table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .weekly-forecast-table thead {
+    background-color: green;
+    color: white;
+  }
+  
+  .weekly-forecast-table th, .weekly-forecast-table td {
+    padding: 12px;
+    // text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .weekly-forecast-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .weekly-forecast-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .weekly-forecast-table th {
+    text-align: center;
+    background-color: green;
+  }
+  
+  .weekly-forecast-table td img {
+    max-width: 50px;
+    vertical-align: middle;
+  }
+  

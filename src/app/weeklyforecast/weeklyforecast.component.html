@@ -1,0 +1,20 @@
+<h1 style="text-align: center;">Weekly Forecast</h1>
+
+<table class="weekly-forecast-table">
+    <thead>
+        <tr>
+            <th>Day #</th>
+            <th>Date</th>
+            <th>Condition</th>
+            <th>Avg Temperature (°C)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let day of weeklyreport; let i= index">
+            <td>{{i+1}}</td>
+            <td> {{day.date}} </td>
+            <td>{{day.day.condition.text}} <img src={{day.day.condition.icon}} alt=""> </td>
+            <td> {{day.day.avgtemp_c}} </td>
+        </tr>
+    </tbody>
+</table>

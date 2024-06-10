@@ -1,4 +1,12 @@
 <app-menu (dataChange)="handleDataChange($event)"></app-menu>
-<app-card  [value]="passvalue"></app-card>
-<app-weatherforcast [value]="passvalue"></app-weatherforcast>
+
+<app-card [value]="passvalue"></app-card>
+
+<div class="button">
+<button (click)="valuechange($event)" value="Hourly" [ngClass]="{'active-btn': isActive('Hourly'), 'inactive-btn': !isActive('Hourly')}">Hourly</button>
+<button (click)="valuechange($event)" value="Weekly" [ngClass]="{'active-btn': isActive('Weekly'), 'inactive-btn': !isActive('Weekly')}">Weekly</button>
+</div>
+<app-weatherforcast [value]="passvalue" *ngIf="forcasttype === 'hourly'"></app-weatherforcast>
+<app-weeklyforecast [value]="passvalue" *ngIf="forcasttype === 'weekly'"></app-weeklyforecast>
+
 <router-outlet></router-outlet>
